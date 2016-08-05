@@ -54,7 +54,7 @@ class Word {
     public String toString() {
         String str="Word :\n";
         for (Letter letter: word) {
-            str+=letter.toString()+"\n";
+            str=str+letter.toString()+"\n";
         }
         return str;
     }

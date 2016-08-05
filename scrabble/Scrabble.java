@@ -1,7 +1,6 @@
 package scrabble;
 
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -9,6 +8,7 @@ import java.util.Scanner;
 /**
  * Created by vedsharma on 05-Aug-16.
  */
+
 public class Scrabble {
 
     public static int charToPrime(char ch) {
@@ -51,11 +51,9 @@ public class Scrabble {
         int primeProduct = calculatePrimeProduct(rackString);
         ArrayList<String> allWords = new ArrayList<>();
         HashMap<String,Integer> primeMap = createPrimeList(getAllWords());
-        for (String word: primeMap.keySet()) {
-            if (primeProduct%primeMap.get(word)==0||isPrimePresent(primeProduct%primeMap.get(word))) {
+        for (String word: primeMap.keySet())
+            if (primeProduct%primeMap.get(word)==0)
                 allWords.add(word);
-            }
-        }
         return allWords;
     }
 
@@ -76,7 +74,7 @@ public class Scrabble {
         //System.out.println("-----------------------------------------------------");
         try {
             for (Word word:convertToObject(getAllWords(rack))) {
-                System.out.println(word.getWord()+" : "+word.getPoints());
+                System.out.println(word);
             }
         }
         catch(java.io.FileNotFoundException e) {
